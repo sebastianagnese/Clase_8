@@ -1,0 +1,15 @@
+21:15:56 **** Incremental Build of configuration Debug for project Clase_8 ****
+make all 
+Building file: ../src/UTN_AGN.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/UTN_AGN.d" -MT"src/UTN_AGN.o" -o "src/UTN_AGN.o" "../src/UTN_AGN.c"
+Finished building: ../src/UTN_AGN.c
+ 
+Building target: Clase_8
+Invoking: GCC C Linker
+gcc  -o "Clase_8"  ./src/Clase_8.o ./src/UTN_AGN.o   
+Finished building target: Clase_8
+ 
+
+21:15:56 Build Finished. 0 errors, 0 warnings. (took 342ms)
+

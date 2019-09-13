@@ -1,0 +1,75 @@
+/*
+ * UTN_AGN.c
+ *
+ *  Created on: 12 sep. 2019
+ *      Author: alumno
+ */
+#include <stddef.h>
+#include <stdio.h>
+#include <stdio_ext.h>
+#include <stdlib.h>
+
+int getInt(	int *pNumero,
+			char *pMessage,
+			char *pMessageError,
+			int min,
+			int max,
+			int cantRetry)
+{
+	int retorno = -1;
+	int buffer;
+	do
+	{
+		printf("%s",pMessage);
+		__fpurge(stdin);
+		if(scanf("%d",&buffer)==1 && buffer >= min && buffer <= max)
+		{
+			*pNumero = buffer;
+			retorno = 0;
+			break;
+		}
+		else
+		{
+		printf("%s",pMessageError);
+		cantRetry--;
+		}
+	}while(cantRetry >= 0);
+	return retorno;
+}
+
+int cargarArrayInt(int *pArray , int limite, int valor)
+{
+	int retorno = -1;
+	int i;
+
+	// --- validación ---
+	if(pArray != NULL && limite > 0)
+	{
+		// --- asignación de valor ---
+		for(i=0;i<limite;i++)
+		{
+			pArray[i]=valor;
+		}
+		retorno = 0;
+	}
+	return retorno;
+}
+
+int mostrarArrayInt(int *pArray , int limite)
+{
+	int retorno = -1;
+	int i;
+
+	//Validacion
+	if(pArray != NULL && limite > 0)
+	{
+		//printeo
+		for(i=0;i<limite;i++)
+		{
+			printf("\n\t%i",pArray[i]);
+		}
+		retorno = 0;
+	}
+	return retorno;
+}
+

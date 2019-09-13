@@ -1,0 +1,49 @@
+/*
+ ============================================================================
+ Name        : Clase_8.c
+ Author      : agn
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdio_ext.h>
+#include <stdlib.h>
+int getInt(	int *pResultado, char *pMessage, char *pMessageError,
+			int min, int max, int cantRetry);
+
+int main(void) {
+	// fgets(NombreArray, sizeof(NombreArray), stdin);
+	// search funcion ATOI (for C)
+
+	return 0;
+}
+
+int getInt(	int *pNumero,
+			char *pMessage,
+			char *pMessageError,
+			int min,
+			int max,
+			int cantRetry)
+{
+	int retorno = -1;
+	int buffer;
+	do
+	{
+		printf("%s",pMessage);
+		__fpurge(stdin);
+		if(scanf("%d",&buffer)==1 && buffer >= min && buffer <= max)
+		{
+			*pNumero = buffer;
+			retorno = 0;
+			break;
+		}
+		else
+		{
+		printf("%s",pMensajeError);
+		reintentos--;
+		}
+	}while(reintentos >= 0);
+	return retorno;
